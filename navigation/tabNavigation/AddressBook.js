@@ -9,7 +9,7 @@ const AddressBook = () => {
 
   useEffect(() => {
     dispatch(getData());
-  }, []);
+  }, [dispatch]);
 
   return (
     <ScrollView style={{flex: 1}}>
@@ -17,24 +17,24 @@ const AddressBook = () => {
         <View key={index} style={{margin: 20, flex: 1}}>
           <Text style={{fontSize: 30, marginBottom: 10}}>Address Detail</Text>
           <View style={styles.container1}>
-            <Text>Name</Text>
+            <Text>Name:</Text>
             <Text style={styles.container}>
               {item.first_name + ' ' + item.last_name}
             </Text>
             <View style={styles.gap} />
-            <Text>City</Text>
+            <Text>City:</Text>
             <Text style={styles.container}>{item.address.city}</Text>
             <View style={styles.gap} />
-            <Text>state</Text>
+            <Text>state:</Text>
             <Text style={styles.container}>{item.address.state}</Text>
             <View style={styles.gap} />
-            <Text>Zip Code</Text>
+            <Text>Zip Code:</Text>
             <Text style={styles.container}>{item.address.zip_code}</Text>
             <View style={styles.gap} />
-            <Text>Street</Text>
+            <Text>Street:</Text>
             <Text style={styles.container}>{item.address.street_address}</Text>
             <View style={styles.gap} />
-            <Text>Street Name</Text>
+            <Text>Street Name:</Text>
             <Text style={styles.container}>{item.address.street_name}</Text>
             <View style={styles.gap} />
           </View>

@@ -15,7 +15,7 @@ const Home = ({navigation}) => {
     <SafeAreaView style={{flex: 1}}>
       <ImageBackground
         style={styles.backImage}
-        source={require('../../Assests/Rectangle.png')}>
+        source={require('../../Assests/2.jpg')}>
         <Text style={{fontSize: 32, marginTop: 10}}>Welcome </Text>
         <Text style={{fontSize: 64, fontWeight: 'bold', color: 'black'}}>
           Users &<Text style={{color: 'white'}}> Profiles</Text>

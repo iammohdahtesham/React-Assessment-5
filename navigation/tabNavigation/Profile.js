@@ -1,5 +1,4 @@
 import React, {useRef, useState, useEffect} from 'react';
-import axios from 'axios';
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,12 +15,12 @@ const Profile = () => {
   const {data} = useSelector(state => state.dataApi);
   useEffect(() => {
     dispatch(getData());
-  }, []);
+  }, [dispatch]);
 
   return (
     <SafeAreaView style={{flex: 1}}>
-      {[data].map(item => (
-        <View style={styles.card}>
+      {[data].map((item, index) => (
+        <View key={index} style={styles.card}>
           <View style={styles.imageContainer}>
             <Image style={styles.image} source={{uri: item.avatar}} />
           </View>
@@ -39,10 +38,10 @@ const Profile = () => {
               {item.email}
             </Text>
             <Text style={styles.rating}>
-              <Text style={styles.title1}>Gender </Text> {item.gender}
+              <Text style={styles.title1}>Gender: </Text> {item.gender}
             </Text>
             <Text style={styles.rating}>
-              <Text style={styles.title1}>DOB </Text>
+              <Text style={styles.title1}>DOB :</Text>
               {item.date_of_birth}
             </Text>
           </View>
