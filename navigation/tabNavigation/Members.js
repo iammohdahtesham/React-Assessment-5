@@ -13,7 +13,7 @@ import TabNav from './TabNav';
 import {useDispatch, useSelector} from 'react-redux';
 import {getMember} from '../../redux/action/Action';
 
-const Members = ({navigation}) => {
+const Members = ({navigation, route}) => {
   const dispatch = useDispatch();
   const {member} = useSelector(state => state.MembersApi);
 

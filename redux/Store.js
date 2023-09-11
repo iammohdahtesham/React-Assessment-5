@@ -6,6 +6,7 @@ import {Reducer} from './reducer/Reducer';
 const rootReducer = combineReducers({
   dataApi: Reducer,
   MembersApi: Reducer,
+  AddressApi: Reducer,
 });
 const Store = configureStore({
   reducer: rootReducer,

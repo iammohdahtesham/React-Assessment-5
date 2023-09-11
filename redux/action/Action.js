@@ -16,6 +16,19 @@ export const getData = () => {
   };
 };
 
+export const getaddressdata = () => {
+  return dispatch => {
+    axios
+      .get('https://random-data-api.com/api/v2/addresses')
+      .then(response => {
+        const address = response.data;
+        dispatch({type: 'FETCH_ADDRESS_SUCCESS', data: address});
+      })
+      .catch(error => {
+        console.error('Error fetching address data:', error);
+      });
+  };
+};
 export const getMember = () => {
   return dispatch => {
     axios

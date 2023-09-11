@@ -1,46 +1,39 @@
 import React, {useEffect} from 'react';
-import {Text, View, SafeAreaView, StyleSheet, ScrollView} from 'react-native';
+import {Text, View, StyleSheet, ScrollView} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import {getData} from '../../redux/action/Action';
+import {getaddressdata} from '../../redux/action/Action';
 import {ColorFormat} from '../../Assests/colorFormat/color';
 
 const AddressBook = () => {
   const dispatch = useDispatch();
-  const {data} = useSelector(state => state.dataApi);
+  const {address} = useSelector(state => state.AddressApi);
 
   useEffect(() => {
-    dispatch(getData());
+    dispatch(getaddressdata());
   }, [dispatch]);
 
   return (
     <ScrollView style={{flex: 1}}>
-      {[data].map((item, index) => (
-        <View key={index} style={{margin: 20, flex: 1}}>
-          <Text style={{fontSize: 30, marginBottom: 10}}>Address Detail</Text>
-          <View style={styles.container1}>
-            <Text>Name:</Text>
-            <Text style={styles.container}>
-              {item.first_name + ' ' + item.last_name}
-            </Text>
-            <View style={styles.gap} />
-            <Text>City:</Text>
-            <Text style={styles.container}>{item.address.city}</Text>
-            <View style={styles.gap} />
-            <Text>state:</Text>
-            <Text style={styles.container}>{item.address.state}</Text>
-            <View style={styles.gap} />
-            <Text>Zip Code:</Text>
-            <Text style={styles.container}>{item.address.zip_code}</Text>
-            <View style={styles.gap} />
-            <Text>Street:</Text>
-            <Text style={styles.container}>{item.address.street_address}</Text>
-            <View style={styles.gap} />
-            <Text>Street Name:</Text>
-            <Text style={styles.container}>{item.address.street_name}</Text>
-            <View style={styles.gap} />
-          </View>
+      <View style={{margin: 20, flex: 1}}>
+        <Text style={{fontSize: 30, marginBottom: 10}}>Address Detail</Text>
+        <View style={styles.container1}>
+          <Text>City:</Text>
+          <Text style={styles.container}>{address.city}</Text>
+          <View style={styles.gap} />
+          <Text>state:</Text>
+          <Text style={styles.container}>{address.state}</Text>
+          <View style={styles.gap} />
+          <Text>Zip Code:</Text>
+          <Text style={styles.container}>{address.zip_code}</Text>
+          <View style={styles.gap} />
+          <Text>Street:</Text>
+          <Text style={styles.container}>{address.street_address}</Text>
+          <View style={styles.gap} />
+          <Text>Street Name:</Text>
+          <Text style={styles.container}>{address.street_name}</Text>
+          <View style={styles.gap} />
         </View>
-      ))}
+      </View>
     </ScrollView>
   );
 };

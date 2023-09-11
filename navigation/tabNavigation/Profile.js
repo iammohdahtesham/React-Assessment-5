@@ -13,34 +13,32 @@ const Profile = () => {
 
   return (
     <SafeAreaView style={{flex: 1}}>
-      {[data].map((item, index) => (
-        <View key={index} style={styles.card}>
-          <View style={styles.imageContainer}>
-            <Image style={styles.image} source={{uri: item.avatar}} />
-          </View>
-          <View style={styles.ratingAndPrice}>
-            <Text style={styles.title}>
-              <Text style={styles.title1}>Name :</Text>
-              {item.first_name + ' ' + item.last_name}
-            </Text>
-            <Text style={styles.rating}>
-              <Text style={styles.title1}>Phone Number : </Text>
-              {item.phone_number}
-            </Text>
-            <Text style={styles.rating}>
-              <Text style={styles.title1}>Email: </Text>
-              {item.email}
-            </Text>
-            <Text style={styles.rating}>
-              <Text style={styles.title1}>Gender: </Text> {item.gender}
-            </Text>
-            <Text style={styles.rating}>
-              <Text style={styles.title1}>DOB :</Text>
-              {item.date_of_birth}
-            </Text>
-          </View>
+      <View style={styles.card}>
+        <View style={styles.imageContainer}>
+          <Image style={styles.image} source={{uri: data.avatar}} />
         </View>
-      ))}
+        <View style={styles.ratingAndPrice}>
+          <Text style={styles.title}>
+            <Text style={styles.title1}>Name :</Text>
+            {data.first_name + ' ' + data.last_name}
+          </Text>
+          <Text style={styles.rating}>
+            <Text style={styles.title1}>Phone Number : </Text>
+            {data.phone_number}
+          </Text>
+          <Text style={styles.rating}>
+            <Text style={styles.title1}>Email: </Text>
+            {data.email}
+          </Text>
+          <Text style={styles.rating}>
+            <Text style={styles.title1}>Gender: </Text> {data.gender}
+          </Text>
+          <Text style={styles.rating}>
+            <Text style={styles.title1}>DOB :</Text>
+            {data.date_of_birth}
+          </Text>
+        </View>
+      </View>
     </SafeAreaView>
   );
 };
