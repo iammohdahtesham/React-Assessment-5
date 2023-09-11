@@ -1,5 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
+import {ColorFormat} from '../../Assests/colorFormat/color';
 import {
   SafeAreaView,
   Text,
@@ -17,8 +18,9 @@ const Home = ({navigation}) => {
         style={styles.backImage}
         source={require('../../Assests/2.jpg')}>
         <Text style={{fontSize: 32, marginTop: 10}}>Welcome </Text>
-        <Text style={{fontSize: 64, fontWeight: 'bold', color: 'black'}}>
-          Users &<Text style={{color: 'white'}}> Profiles</Text>
+        <Text
+          style={{fontSize: 64, fontWeight: 'bold', color: ColorFormat.black}}>
+          Users &<Text style={{color: ColorFormat.white}}> Profiles</Text>
         </Text>
         <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
           <TouchableOpacity style={styles.button1}>
@@ -29,7 +31,7 @@ const Home = ({navigation}) => {
             onPress={() => {
               navigation.navigate(Members);
             }}>
-            <Text style={{color: 'white'}}>Lets get started</Text>
+            <Text style={{color: ColorFormat.white}}>Lets get started</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
   button1: {
     margin: 20,
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: ColorFormat.white,
     borderRadius: 50,
     paddingHorizontal: 45,
     paddingVertical: 20,
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
   button2: {
     margin: 20,
     alignItems: 'center',
-    backgroundColor: '#224F34',
+    backgroundColor: ColorFormat.green,
     borderRadius: 50,
     paddingHorizontal: 45,
     paddingVertical: 20,

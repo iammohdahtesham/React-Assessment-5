@@ -1,14 +1,8 @@
-import React, {useRef, useState, useEffect} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-  FlatList,
-  Image,
-} from 'react-native';
+import React, {useEffect} from 'react';
+import {SafeAreaView, StyleSheet, Text, View, Image} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {getData} from '../../redux/action/Action';
+import {ColorFormat} from '../../Assests/colorFormat/color';
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -59,7 +53,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 10,
     borderRadius: 15,
-    backgroundColor: 'white',
+    backgroundColor: ColorFormat.white,
     shadowColor: '#222',
     shadowOffset: {
       width: 2,
@@ -77,7 +71,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     flex: 1,
-    backgroundColor: '#c2efd4',
+    backgroundColor: ColorFormat.offgreen,
     borderWidth: 0.5,
     borderRadius: 12,
     marginVertical: 15,
@@ -100,7 +94,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   title1: {
-    color: '#224F34',
+    color: ColorFormat.green,
     fontWeight: 'bold',
     fontSize: 15,
   },

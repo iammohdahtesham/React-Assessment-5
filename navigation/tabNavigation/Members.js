@@ -8,6 +8,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
+import {ColorFormat} from '../../Assests/colorFormat/color';
 import TabNav from './TabNav';
 import {useDispatch, useSelector} from 'react-redux';
 import {getMember} from '../../redux/action/Action';
@@ -18,7 +19,7 @@ const Members = ({navigation}) => {
 
   useEffect(() => {
     dispatch(getMember());
-  }, []);
+  }, [dispatch]);
 
   return (
     <SafeAreaView style={{flex: 1}}>
@@ -31,7 +32,7 @@ const Members = ({navigation}) => {
             <View style={styles.imageContainer}>
               <Image style={styles.image} source={{uri: item.avatar}} />
             </View>
-            <View style={{flex:1}}>
+            <View style={{flex: 1}}>
               <Text style={styles.rating}>Name : </Text>
               <Text style={styles.title}>
                 {item.first_name + ' ' + item.last_name}
@@ -44,7 +45,7 @@ const Members = ({navigation}) => {
               onPress={() => {
                 navigation.navigate(TabNav);
               }}>
-              <Text style={{textAlign: 'center', color: 'white'}}>
+              <Text style={{textAlign: 'center', color: ColorFormat.white}}>
                 Know more
               </Text>
             </TouchableOpacity>
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 10,
     borderRadius: 15,
-    backgroundColor: 'white',
+    backgroundColor: ColorFormat.white,
     shadowColor: '#222',
     shadowOffset: {
       width: 2,
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   imageContainer: {
-    backgroundColor: '#c2efd4',
+    backgroundColor: ColorFormat.offgreen,
     borderWidth: 0.5,
     borderRadius: 12,
     marginVertical: 25,
@@ -91,10 +92,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   rating: {
-    color: '#224F34',
+    color: ColorFormat.green,
     fontWeight: 'bold',
     fontSize: 17,
     paddingBottom: 1,
+    // fontFamily: 'GreatVibes-Regular',
+    // fontFamily: 'bakery',
   },
   price: {
     fontWeight: '700',
@@ -103,7 +106,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   button: {
-    backgroundColor: '#224F34',
+    backgroundColor: ColorFormat.green,
     padding: 10,
     margin: 10,
     borderRadius: 10,

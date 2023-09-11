@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {Text, View, SafeAreaView, StyleSheet, ScrollView} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {getData} from '../../redux/action/Action';
+import {ColorFormat} from '../../Assests/colorFormat/color';
 
 const AddressBook = () => {
   const dispatch = useDispatch();
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 10,
     borderRadius: 15,
-    backgroundColor: 'white',
+    backgroundColor: ColorFormat.white,
     shadowColor: '#222',
     shadowOffset: {
       width: 2,
@@ -62,13 +63,13 @@ const styles = StyleSheet.create({
   },
   container: {
     margin: 10,
-    color: '#224F34',
+    color: ColorFormat.green,
     fontWeight: 'bold',
     fontSize: 25,
   },
   gap: {
     margin: 10,
-    borderBottomColor: 'black',
+    borderBottomColor: ColorFormat.black,
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
 });
