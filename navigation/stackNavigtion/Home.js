@@ -17,7 +17,14 @@ const Home = ({navigation}) => {
       <ImageBackground
         style={styles.backImage}
         source={require('../../Assests/2.jpg')}>
-        <Text style={{fontSize: 32, marginTop: 10}}>Welcome </Text>
+        <Text
+          style={{
+            fontSize: 32,
+            marginTop: 10,
+            fontFamily: 'GreatVibes-Regular',
+          }}>
+          Welcome{' '}
+        </Text>
         <Text
           style={{fontSize: 64, fontWeight: 'bold', color: ColorFormat.black}}>
           Users &<Text style={{color: ColorFormat.white}}> Profiles</Text>
